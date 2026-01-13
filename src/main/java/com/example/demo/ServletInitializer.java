@@ -1,13 +1,12 @@
-package com.example.demo;
+@SpringBootApplication
+public class CrudOperationApplication extends SpringBootServletInitializer {
 
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(CrudOperationApplication.class);
+    }
 
-public class ServletInitializer extends SpringBootServletInitializer {
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(DemoApplication.class);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(CrudOperationApplication.class, args);
+    }
 }
